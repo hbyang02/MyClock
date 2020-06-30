@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        class newRunnable extends Runnable {
+        class newRunnable implements Runnable {
 
             public void run() {
                 while (true) {
