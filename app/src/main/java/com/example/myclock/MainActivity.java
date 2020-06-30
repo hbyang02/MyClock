@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
         mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                Calendar cal = Calendar.getInstance() ;
+                Calendar cal = Calendar.getInstance();
 
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
                 String strTime = sdf.format(cal.getTime());
 
-                clockTextView = findViewById(R.id.clock) ;
-                clockTextView.setText(strTime) ;
+                clockTextView = findViewById(R.id.clock);
+                clockTextView.setText(strTime);
             }
         };
 
-        class NewRunnable implements Runnable {
-            @Override
+        class newRunnable extends Runnable {
+
             public void run() {
                 while (true) {
                     try {
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        NewRunnable ne = new NewRunnable() ;
-        Thread t = new Thread(ne) ;
+        newRunnable nu = new newRunnable();
+        Thread t = new Thread(nu) ;
         t.start() ;
 
 
